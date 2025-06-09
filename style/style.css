@@ -1,3 +1,21 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  background: transparent !important;
+  overflow-x: hidden;
+}
+
+.body1 {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f) !important;
+  animation: fadeInBg 1.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -1010,13 +1028,14 @@ body {
 }
 
 
-.body1 {
-  background: red ;
-  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
-  animation: fadeInBg 1.5s ease-out ;
-  overflow: hidden;
-  position: relative;
+
+
+@media screen and (max-width: 600px) {
+  .body1 {
+    min-height: 100svh; /* unit viewport réelle sur mobile */
+  }
 }
+
 @keyframes fadeInBg {
   0% {
     opacity: 0;
