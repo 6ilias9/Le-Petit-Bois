@@ -921,11 +921,6 @@ body {
   border-radius: 12px;
 }
 
-body {
-  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
-  overflow: hidden;
-  position: relative;
-}
 
 .stars,
 .shooting-star {
