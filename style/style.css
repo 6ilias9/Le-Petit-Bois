@@ -1,18 +1,10 @@
-html, body {
-  margin: 0;
-  padding: 0;
+html, body, .body1 {
   height: 100%;
   min-height: 100vh;
-  background: transparent !important;
-  overflow-x: hidden;
-}
-
-.body1 {
-  min-height: 100vh;
   background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f) !important;
-  animation: fadeInBg 1.5s ease-out;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 
@@ -23,6 +15,18 @@ html, body {
 body {
   background-color: #111;
 }
+
+.stars,
+.shooting-star,
+.fire {
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+}
+
+
 
 @keyframes scaleUpDown {
   0%, 100% {
@@ -1028,7 +1032,13 @@ body {
 }
 
 
-
+.body1 {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f) !important;
+  animation: fadeInBg 1.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
 
 @media screen and (max-width: 600px) {
   .body1 {
@@ -1036,11 +1046,18 @@ body {
   }
 }
 
+
 @keyframes fadeInBg {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@supports (height: 100svh) {
+  .body1 {
+    min-height: 100svh;
   }
 }
