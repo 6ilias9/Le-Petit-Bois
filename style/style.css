@@ -1012,7 +1012,7 @@ body {
 
 .body1 {
   background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
-  animation: fadeInBg 1.5s ease-out forwards;
+  animation: fadeInBg 1.5s ease-out infinite;
   overflow: hidden;
   position: relative;
 }
