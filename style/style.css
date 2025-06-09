@@ -344,6 +344,9 @@ body {
   transition: color 0.3s;
 }
 
+.footer-layer{
+  z-index: 50;
+}
 .footer-links a:hover {
   color: #fff;
 }
@@ -951,12 +954,14 @@ body {
 }
 
 .stars {
-  width: 1px;
-  height: 1px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  background: white;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
   box-shadow:
     2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
     22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
@@ -970,10 +975,11 @@ body {
 
 .stars::after {
   content: "";
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  background: white;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
   box-shadow:
     8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
     33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
@@ -1060,4 +1066,31 @@ body {
   .body1 {
     min-height: 100svh;
   }
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(25deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120vw) translateY(50vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  pointer-events: none;
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  transform: rotate(25deg);
+  z-index: 1; /* ou 10 si nécessaire */
+}
+
+
+
+.body1 {
+  overflow: hidden;
 }
