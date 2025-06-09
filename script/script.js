@@ -60,11 +60,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Masquer le loader une fois que tout est chargé
-window.addEventListener("load", () => {
-  const loader = document.getElementById("page-loader");
-  if (loader) loader.style.display = "none";
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".pizza-item");
+
+  items.forEach((item, index) => {
+    const rect = item.getBoundingClientRect();
+    const screenMiddle = window.innerWidth / 2;
+
+    // Vérifie la position horizontale
+    if (rect.left < screenMiddle) {
+      item.classList.add("slide-in-left");
+    } else {
+      item.classList.add("slide-in-right");
+    }
+
+    // Ajoute un délai d'apparition progressif pour un effet fluide
+    
+
+  });
 });
-
-
-
