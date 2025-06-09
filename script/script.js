@@ -60,5 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Masquer le loader une fois que tout est chargé
+window.addEventListener("load", () => {
+  const loader = document.getElementById("page-loader");
+  if (loader) loader.style.display = "none";
+});
+
 
 
